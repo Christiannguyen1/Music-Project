@@ -1,5 +1,6 @@
 import React from "react"
 import { songsData } from "../assets/assets"
+import { assets } from "../assets/assets"
 
 const Player = () => {
     return (
@@ -8,7 +9,7 @@ const Player = () => {
                 <img className='w-12' src={songsData[0].image} alt=''/>
                 <div>
                     <p>{songsData[0].name}</p>
-                    <p>{songsData[0].slice(0,12)}</p>
+                    <p>{songsData[0].desc}</p>
                 </div>
             </div>
             <div className='flex flex-col items-center gap-1 m-auto'>
@@ -27,7 +28,7 @@ const Player = () => {
                     <p>3:45</p>
                 </div>
             </div>
-            <div className='hidden lg_flex items-center gap-2 opacity-75'>
+            <div className='hidden lg:flex items-center gap-2 opacity-75'>
                 <img className='w-4' src={assets.play_icon} alt=''/>
                 <img className='w-4' src={assets.mic_icon} alt=''/>
                 <img className='w-4' src={assets.queue_icon} alt=''/>
