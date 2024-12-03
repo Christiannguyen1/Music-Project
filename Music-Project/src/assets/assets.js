@@ -41,6 +41,11 @@ import img16 from './img16.jpg'
 import song1 from  './song1.mp3'
 import song2 from  './song2.mp3'
 import song3 from  './song3.mp3'
+import song4 from  './song4.mp3'
+import song5 from  './song5.mp3'
+import song6 from  './song6.mp3'
+import song7 from  './song7.mp3'
+import song8 from  './song8.mp3'
 
 export const assets = {
     bell_icon,
@@ -74,42 +79,42 @@ export const albumsData = [
         id:0,
         name: "Top 50 Global",
         image: img8,
-        desc:"Your weekly update of the most played tracks",
+        desc:"Your weekly update of the most played tracks right now - Global.",
         bgColor:"#2a4365"
     },
     {   
         id:1,
         name: "Top 50 USA",
         image: img9,
-        desc:"Your weekly update of the most played tracks",
+        desc:"Your weekly update of the most played tracks right now - USA.",
         bgColor:"#22543d"
     },
     {   
         id:2,
         name: "Trending USA",
         image: img10,
-        desc:"Your weekly update of the most played tracks",
+        desc:"Your weekly update of the most played tracks right now - USA.",
         bgColor:"#742a2a"
     },
     {   
         id:3,
         name: "Trending Global",
         image: img16,
-        desc:"Your weekly update of the most played tracks",
+        desc:"Your weekly update of the most played tracks right now - Global.",
         bgColor:"#44337a"
     },
     {   
         id:4,
         name: "Mega Hits",
         image: img11,
-        desc:"Your weekly update of the most played tracks",
+        desc:"A mega mix of 75 favorites from the last few years!",
         bgColor:"#234e52"
     },
     {   
         id:5,
         name: "Today's Top Hits",
         image: img15,
-        desc:"Your weekly update of the most played tracks",
+        desc:"The hottest 50. Cover: Kendrick Lamar",
         bgColor:"#744210"
     }
 ]
@@ -117,66 +122,66 @@ export const albumsData = [
 export const songsData = [
     {
         id:0,
-        name: "Song One",
+        name: "APT.",
         image: img1,
         file:song1,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"3:00"
+        desc:"Rosé, Bruno Mars",
+        duration:"2:49"
     },
     {
         id:1,
-        name: "Song Two",
+        name: "Die With A Smile",
         image: img2,
         file:song2,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"2:20"
+        desc:"Lady Gaga, Bruno Mars",
+        duration:"4:12"
     },
     {
         id:2,
-        name: "Song Three",
+        name: "luther (with sza)",
         image: img3,
         file:song3,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"2:32"
+        desc:"Kendrick Lamar, SZA",
+        duration:"2:57"
     },
     {
         id:3,
-        name: "Song Four",
+        name: "BIRDS OF A FEATHER",
         image: img4,
-        file:song1,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"2:50"
+        file:song4,
+        desc:"Billie Eilish",
+        duration:"3:31"
     },
     {
         id:4,
-        name: "Song Five",
+        name: "squabble up",
         image: img5,
-        file:song2,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"3:10"
+        file:song5,
+        desc:"Kendrick Lamar, Lefty Gunplay",
+        duration:"2:38"
     },
     {
         id:5,
-        name: "Song Six",
+        name: "That's So True",
         image: img14    ,
-        file:song3,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"2:45"
+        file:song6,
+        desc:"Gracie Abrams",
+        duration:"2:46"
     },
     {
         id:6,
-        name: "Song Seven",
+        name: "tv off (feat. lefty gunplay)",
         image: img7,
-        file:song1,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"2:18"
+        file:song7,
+        desc:"Kendrick Lamar, Lefty Gunplay",
+        duration:"3:40"
     },
     {
         id:7,
-        name: "Song Eight",
+        name: "Who",
         image: img12,
-        file:song2,
-        desc:"Put a smile on your face with these happy tunes",
-        duration:"2:35"
+        file:song8,
+        desc:"Jimin",
+        duration:"2:51"
     }
 ]
