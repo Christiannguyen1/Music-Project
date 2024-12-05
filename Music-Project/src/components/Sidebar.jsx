@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import{assets} from '../assets/assets'
+import PlaylistModal from './PlaylistModal';
 import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-    
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const[playlists, setPlaylists] = useState([]);
     const navigate = useNavigate();
-    
+
+    const handleSavePlaylist = (newPlaylist) => {
+        setPlaylists((prev) => [...prev, newPlaylist]);
+    };
+
     return (
         <div className='w-[25%] h-full p-2 flex-col gap-2 text-white hidden lg:flex'>
             <div className='bg-[#121212] h-[15%] rounded flex flex-col justify-around'>
@@ -32,7 +38,12 @@ const Sidebar = () => {
                 <div className='p-4 bg-[#242424] m-2 rounded font-semibold flex flex-col items-start justify-start gap-1 pl-4'>
                     <h1>Create a playlist here</h1>
                     <p className='font-light'>Click below to get started</p>
-                    <button className='px-4 py-1.5 bg-white text-[15px] text-black rounded-full mt-4'>Create Playlist</button>
+                    <button className='px-4 py-1.5 bg-white text-[15px] text-black rounded-full mt-4' onClick={() => setIsModalOpen(true)}>Create Playlist</button>
+                    <PlaylistModal 
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        onSave={handleSavePlaylist}
+                    />
                 </div>
                 <div className='p-4 bg-[#242424] m-2 rounded font-semibold flex flex-col items-start justify-start gap-1 pl-4 mt-4'>
                     <h1>Let's find a podcast to follow</h1>
