@@ -10,6 +10,7 @@ const DisplayAlbum = () => {
     const albumData = albumsData[id];
     const { playWithId } = useContext(PlayerContext);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [sortedSongs, setSortedSongs] = useState(songsData);
     const dropdownRef = useRef(null);
 
     const toggleDropdown = () => {
@@ -20,6 +21,12 @@ const DisplayAlbum = () => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setDropdownOpen(false);
         }
+    };
+
+    const sortByTitle = () => {
+        const sorted = [...sortedSongs].sort((a, b) => a.name.localeCompare(b.name));
+        setSortedSongs(sorted);
+        setDropdownOpen(false);
     };
 
     useEffect(() => {
@@ -59,7 +66,7 @@ const DisplayAlbum = () => {
                     {dropdownOpen && (
                         <div ref={dropdownRef} className='absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg'>
                             <ul>
-                                <li className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Title</li>
+                                <li onClick={sortByTitle} className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Title</li>
                                 <li className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Artist</li>
                                 <li className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Duration</li>
                             </ul>
@@ -69,7 +76,7 @@ const DisplayAlbum = () => {
             </div>
             <hr />
             {
-                songsData.map((item, index) => (
+                sortedSongs.map((item, index) => (
                     <div onClick={() => playWithId(item.id)} key={index} className='grid grid-cols-3 sm:grid-cols-4 gap-2 p-2 items-center text-[#a7a7a7] hover:bg-[#ffffff2b cursor-pointer]'>
                         <p className='text-white'>
                             <b className='mr-4 text-[#a7a7a7]'>{index + 1}</b>
