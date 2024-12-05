@@ -29,6 +29,21 @@ const DisplayAlbum = () => {
         setDropdownOpen(false);
     };
 
+    const sortByDuration = () => {
+        const sorted = [...sortedSongs].sort((a, b) => {
+            const durationA = parseDuration(a.duration);
+            const durationB = parseDuration(b.duration);
+            return durationA - durationB;
+        });
+        setSortedSongs(sorted);
+        setDropdownOpen(false);
+    };
+
+    const parseDuration = (duration) => {
+        const [minutes, seconds] = duration.split(':').map(Number);
+        return minutes * 60 + seconds;
+    };
+
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
@@ -68,7 +83,7 @@ const DisplayAlbum = () => {
                             <ul>
                                 <li onClick={sortByTitle} className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Title</li>
                                 <li className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Artist</li>
-                                <li className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Duration</li>
+                                <li onClick={sortByDuration} className='px-4 py-2 hover:bg-gray-200 cursor-pointer'>Duration</li>
                             </ul>
                         </div>
                     )}
